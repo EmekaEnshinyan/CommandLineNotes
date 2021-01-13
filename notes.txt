@@ -46,6 +46,10 @@ syn: $ls *{filename/extension/etc.}
 
 syn: $ls -l {filename/wildcard}
 
+[Make the bytes "human readable"]
+
+syn: @ls -l -h [filename]
+
 [List by REVERSED TIME OF MODIFICATION]
 
 syn: $ls -rtl {empty or Wildcard+}
@@ -88,3 +92,23 @@ syn: $!! (or $! depending)
 		foo
 	ex: $!curl
 		(re-downloads the file)
+
+---GETTING FILE DETAILS---
+
+[show the first 10 lines or last 10 lines of file]
+
+syn: $head [filename]
+syn: $tail [filename]
+
+[Get the wordcount]
+
+syn: $wc [filename]
+
+[Using piping to redirect]
+
+def: redirects the output of one command/program/process to another
+for further processing, i.e. it takes the output of a command and 
+treats it as input for another command, which in turn will yield 
+another output
+
+
