@@ -1,0 +1,90 @@
+
+--PAUSE THE TERMINAL--
+
+syn: $sleep {number} <-- defaulted to seconds
+
+--CLEAR TERMINAL UI TEXT--
+ syn: $clear
+ 
+ --CREATE A FILE--
+ 
+ syn: $touch {filename} <-- defulted to empty file
+ 
+ [With 'echo']
+ 
+ def: creates a file and appends the text from echo
+ syn: $echo {text} > {name of file}.txt
+ 
+ [Add new line to file]
+ 
+ syn: $echo {text} >> {filename}.txt
+ 
+ [See the differences in a file]
+ 
+ syn: $diff {nameof file} {name of file}
+ 
+
+ --SHOW CONTENTS OF FILE--
+ 
+ def: dumps contents of a file onto cmd screen
+ 
+ syn: $cat {name of file}.txt 
+ 
+ --LIST FILES AND DIRECTORIES IN CD--
+
+[List all files in cd]
+
+syn: $ls 
+
+[Searching for a set of files/Wildcard]
+
++++"Wildcard+" means filenames, extensions or other applicable parameters as allowed by the ls command
+syn: $ls *{filename/extension/etc.}
+	ex: $ls *.txt <-- will list all files with .txt extension
+
+[See bytes and date modified of file]
+
+syn: $ls -l {filename/wildcard}
+
+[List by REVERSED TIME OF MODIFICATION]
+
+syn: $ls -rtl {empty or Wildcard+}
+
+---MANIPULATING FILES---
+
+[Renaming a file]
+
+syn: $mv [original filename] [new filename]
+
+[Copy a file]
+
+syn: $cp [filename] [another filename]
+
+[Delete file]
+
+syn: $rm [filename] <- this will not prompt user to confirm deletion
+syn: $rm -i [filename] <- this will prompt user to confirm
+
+**There is TAB completion (press TAB when typing a command) in which the computer will try to predict and type out what you are 
+attempting to type so that you need not type the entire command by hand.
+
+---DOWNLOADING AND MAINPULATING DOWNLOADED FILES---
+
+[Chech if possible on your OS]
+
+syn: $which curl
+
+[Download a file]
+
+???syn: $curl -OL 
+
+[Repeating previous commands w/o using the up arrow]
+
+syn: $!! (or $! depending)
+	ex: $echo "foo"
+		foo
+		$!!
+		echo "foo"
+		foo
+	ex: $!curl
+		(re-downloads the file)
