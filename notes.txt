@@ -111,4 +111,58 @@ for further processing, i.e. it takes the output of a command and
 treats it as input for another command, which in turn will yield 
 another output
 
+[To view files that are actively changing]
 
+syn: $tail -f [filename]
+	**You can actively see the changes of the file
+	ex: $ping www.google.com > google.log
+	(open another terminal tab)
+	$tail -f google.log
+
+---NAVIGATING THROUGH A FILE---
+
+[Basic Navigation]
+
+def: allows you to print out file and use the arrow keys to scroll 
+through it
+syn: $less [filename]
+
+[Find a word in the file]
+
+syn: $less [filename]
+	 abc
+	 defg
+	 :/[word]
+
+[Move to next/previous search result]
+
+$less [filename]
+	 abc
+	 defg
+	 :/[word]
+	 n/N
+
+[Move to beginning/end of file]
+
+beginning
+syn: $less [filename]
+	 abc
+	 defg
+	 :/G
+syn: $less [filename]
+	 abc
+	 defg
+	 :/1G
+
+[Display the lines that match patterns/occurrences]
+
+syn: $grep [word/pattern/etc.] [filename]
+	ex: grep rose sonnets.txt
+	...
+	<displays only lines that contain rose>
+	...
+***Bear in mind that grep is case-sensitive. You can have
+	it output case-insensitive by using grep -i [pattern]
+	
+	ex: $grep -i rose sonnets.txt <- this will display the
+	lines that contain both rose and Rose
