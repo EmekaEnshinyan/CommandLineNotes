@@ -166,3 +166,26 @@ syn: $grep [word/pattern/etc.] [filename]
 	
 	ex: $grep -i rose sonnets.txt <- this will display the
 	lines that contain both rose and Rose
+
+---DIRECTORIES---
+
+[Get superuser priviliges to issue commands]
+
+syn: $sudo [command]
+
+[Make a directory]
+
+syn: $mkdir [name]
+
+**Can move directory if needed:  
+	ex: $mv *.txt text_files/ <-- using * as wildcard, this took whatever files that had .txt
+									extension and put it in the text_files folder
+
+[Show contents of dir]
+
+syn: $ls -dl [dir]
+
+[Changing dir from where commands will be given]
+
+syn: $cd [dir]
+
