@@ -167,6 +167,12 @@ syn: $grep [word/pattern/etc.] [filename]
 	ex: $grep -i rose sonnets.txt <- this will display the
 	lines that contain both rose and Rose
 
+---MANIPULATING PROCESSES---
+
+[Find a process]
+
+syn: $ps aux [process name]
+
 ---DIRECTORIES---
 
 [Get superuser priviliges to issue commands]
