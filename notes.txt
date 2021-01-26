@@ -169,9 +169,33 @@ syn: $grep [word/pattern/etc.] [filename]
 
 ---MANIPULATING PROCESSES---
 
+[See all processes running]
+
+syn: $ps aux
+
+see sorted: $top
+
 [Find a process]
 
-syn: $ps aux [process name]
+syn: $ps aux | grep [process name]
+
+[Killing a process]
+
+syn: $kill -15 [process name] (15 is the termination code)
+
+[Kill all processes matching a particular name]
+
+syn: $pkill -15 -f [process name]
+
+---ISSUING MULTIPLE COMMANDS---
+
+[Isuue commands sequentially]
+
+syn: $[command] ; [command]
+
+[Issue conditional command (if prior command didn't work, then stop)]
+
+syn: $[command] && [command]
 
 ---DIRECTORIES---
 
@@ -195,3 +219,14 @@ syn: $ls -dl [dir]
 
 syn: $cd [dir]
 
+[Manipulate dir]
+
+rename - $mv [directory]
+copying - syn: $cp -r ../[filename] <-- the ".." is for relative path
+removing - syn: $rm -rf [directory]
+
+[grep through a directory's files and its subdirectories]
+
+syn: $cd [directory]
+	 $grep -r [matching string/word] [filename] 
+	
